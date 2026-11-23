@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Golden Key | ورقة عمل الماضي البسيط</title>
+<style>
+:root{font-family:system-ui,"Segoe UI",sans-serif;color:#15233a;background:#111926;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;padding:clamp(12px,4vw,54px) 12px;background:radial-gradient(ellipse at top,#293b51 0,transparent 65%)}
+main{max-width:1030px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) 260px;background:#fffbef;border:2px solid #c89c47;border-radius:23px;overflow:hidden;box-shadow:0 22px 60px #0007}
+aside{grid-column:2;grid-row:1;display:grid;place-content:center;text-align:center;padding:30px 16px;color:#fff6dd;background:radial-gradient(circle at 50% 40%,#684315,#111e30 70%);border-inline-start:1px solid #c89c47}
+.key{width:132px;aspect-ratio:1;margin:0 auto 20px;display:grid;place-items:center;border-radius:50%;border:2px solid #e6b85e;background:#261d15;box-shadow:0 0 42px #efb54554,inset 0 0 0 7px #e6b85e24;font: bold 68px Georgia,serif;color:#ffd373}
+aside strong{font: bold 27px Georgia,serif}
+aside p{margin:9px 0 0;color:#f0cc80;font-size:14px}
+.sheet{grid-column:1;grid-row:1;padding:clamp(15px,3.4vw,34px)}
+h1{margin:0 0 17px;font: bold clamp(25px,4vw,39px) Georgia,serif}
+.details{display:grid;grid-template-columns:1fr .75fr auto;gap:9px;align-items:end}
+.details label,.score{display:grid;gap:5px;font-size:14px;font-weight:750}
+input{width:100%;min-width:0;height:43px;border:1px solid #987645;background:white;border-radius:8px;padding:0 9px;font:inherit;color:inherit}
+.score output{display:grid;place-items:center;min-width:67px;height:43px;padding:0 6px;border-radius:8px;background:#172940;color:#ffd989;white-space:nowrap}
+.instruction{margin:19px 0 6px;padding:10px 12px;border-radius:8px;background:#f6df9a;color:#332308;font-weight:750}
+ol{list-style:none;counter-reset:item;margin:0;padding:0}
+li{counter-increment:item;display:flex;align-items:center;flex-wrap:wrap;column-gap:8px;row-gap:4px;padding:10px 0;border-bottom:1px dashed #c9ad7c;font-size:clamp(15px,2vw,17px)}
+li::before{content:counter(item);display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:#f3d17e;color:#392300;font-weight:800}
+li label{display:flex;align-items:center;gap:7px}
+li input{width:112px}
+.feedback{flex-basis:100%;margin-inline-start:35px;min-width:0;font-size:13px;font-weight:720}
+.feedback:empty,.status:empty{display:none}
+.correct input{border:2px solid #287449;background:#effaf2}
+.correct .feedback{color:#1a683d}
+.incorrect input{border:2px solid #a84635;background:#fff1ed}
+.incorrect .feedback{color:#963627}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+button{font:inherit;font-weight:750;padding:10px 15px;border:1px solid #997237;border-radius:8px;cursor:pointer;background:#fff9e8;color:#483313}
+button[type=submit]{background:#1e344f;color:white;border-color:#1e344f}
+:focus-visible{outline:3px solid #2475b2;outline-offset:2px}
+.status{margin:10px 0 0;font-weight:700}
+@media(max-width:800px){main{display:flex;flex-direction:column}aside{display:flex;align-items:center;justify-content:center;gap:13px;padding:12px;border-inline-start:0;border-bottom:1px solid #c89c47}.key{width:52px;margin:0;font-size:29px;box-shadow:none}aside strong{font-size:21px}aside p{margin:2px 0 0}}
+</style>
+</head>
+<body>
+<main>
+<aside dir="ltr" lang="en">
+  <span class="key" aria-hidden="true">ed</span>
+  <div><strong>Mr. Past Adventure</strong><p>The Golden Key</p></div>
+</aside>
+<section class="sheet">
+  <h1 dir="ltr" lang="en">Simple Past · Regular Verbs</h1>
+  <form id="worksheet">
+    <div class="details">
+      <label>الاسم <input id="student-name" type="text"></label>
+      <label>الصف <input id="student-class" type="text"></label>
+      <div class="score">الدرجة <output id="score" dir="ltr" aria-live="polite">— / 6</output></div>
+    </div>
+    <div lang="en" dir="ltr">
+      <p class="instruction">Use the past form of the verbs in brackets.</p>
+      <ol>
+        <li><label>I <input type="text" aria-label="Answer 1: play" aria-describedby="feedback-1" autocapitalize="off" autocomplete="off" spellcheck="false" data-answer="played"></label><span>(play) football yesterday.</span><span class="feedback" id="feedback-1" dir="rtl" lang="ar"></span></li>
+        <li><label>She <input type="text" aria-label="Answer 2: watch" aria-describedby="feedback-2" autocapitalize="off" autocomplete="off" spellcheck="false" data-answer="watched"></label><span>(watch) a movie last night.</span><span class="feedback" id="feedback-2" dir="rtl" lang="ar"></span></li>
+        <li><label>We <input type="text" aria-label="Answer 3: visit" aria-describedby="feedback-3" autocapitalize="off" autocomplete="off" spellcheck="false" data-answer="visited"></label><span>(visit) the museum last week.</span><span class="feedback" id="feedback-3" dir="rtl" lang="ar"></span></li>
+        <li><label>They <input type="text" aria-label="Answer 4: clean" aria-describedby="feedback-4" autocapitalize="off" autocomplete="off" spellcheck="false" data-answer="cleaned"></label><span>(clean) the classroom.</span><span class="feedback" id="feedback-4" dir="rtl" lang="ar"></span></li>
+        <li><label>He <input type="text" aria-label="Answer 5: cook" aria-describedby="feedback-5" autocapitalize="off" autocomplete="off" spellcheck="false" data-answer="cooked"></label><span>(cook) dinner yesterday.</span><span class="feedback" id="feedback-5" dir="rtl" lang="ar"></span></li>
+        <li><label>I <input type="text" aria-label="Answer 6: walk" aria-describedby="feedback-6" autocapitalize="off" autocomplete="off" spellcheck="false" data-answer="walked"></label><span>(walk) to school in the morning.</span><span class="feedback" id="feedback-6" dir="rtl" lang="ar"></span></li>
+      </ol>
+    </div>
+    <div class="actions">
+      <button type="submit">تحقّق من الإجابات</button>
+      <button type="button" id="retry">محاولة جديدة</button>
+    </div>
+    <p class="status" id="status" role="status"></p>
+  </form>
+</section>
+</main>
+<script>
+const form = document.querySelector('#worksheet');
+const answers = [...form.querySelectorAll('[data-answer]')];
+const score = document.querySelector('#score');
+const status = document.querySelector('#status');
+
+function clearResult() {
+  score.value = '— / 6';
+  status.textContent = '';
+  for (const input of answers) {
+    const row = input.closest('li');
+    row.classList.remove('correct', 'incorrect');
+    row.querySelector('.feedback').textContent = '';
+    input.removeAttribute('aria-invalid');
+  }
+}
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  let points = 0;
+  let blanks = 0;
+  for (const input of answers) {
+    const answer = input.value.trim().toLowerCase();
+    const correct = answer === input.dataset.answer;
+    const row = input.closest('li');
+    if (correct) points++;
+    if (!answer) blanks++;
+    row.classList.toggle('correct', correct);
+    row.classList.toggle('incorrect', !correct);
+    input.setAttribute('aria-invalid', String(!correct));
+    row.querySelector('.feedback').textContent = correct ? '✓ إجابة صحيحة' :
+      answer ? 'حاول مرة أخرى.' : 'هذا الفراغ يحتاج إلى إجابة.';
+  }
+  score.value = points + ' / ' + answers.length;
+  status.textContent = points === answers.length ? 'أحسنت! حصلت على الدرجة الكاملة.' :
+    blanks ? 'أكمل الفراغات وراجع الإجابات المحددة ثم تحقّق مرة أخرى.' :
+      'راجع الإجابات المحددة ثم تحقّق مرة أخرى.';
+});
+
+form.addEventListener('input', (event) => {
+  if (answers.includes(event.target) && score.value !== '— / 6') clearResult();
+});
+
+document.querySelector('#retry').addEventListener('click', () => {
+  for (const input of answers) input.value = '';
+  clearResult();
+  answers[0].focus();
+});
+</script>
+</body>
+</html>
